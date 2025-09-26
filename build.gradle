@@ -5,8 +5,14 @@ plugins {
 }
 
 group = 'kr.co.seolyooo'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 description = 'spring_github-actions-app'
+
+ProcessResources {
+    filesMatching('**/applicaion.yml'){
+        expand(project.properties)
+    }
+}
 
 java {
     toolchain {
